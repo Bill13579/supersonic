@@ -95,8 +95,4 @@ The base class for all Supersonic Extensions. If you want to make your own exten
 
 <hr/>
 
-# Contact
-
-If you want to support me, please contact me at kudoshiko@gmail.com.
-
-My website is at [http://www.WhatsYourIdea.com/](http://www.WhatsYourIdea.com/ "Website")
+Checkout my website at [http://www.WhatsYourIdea.com/](http://www.WhatsYourIdea.com/ "Website")
