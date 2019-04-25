@@ -6,7 +6,7 @@ with open('README.md') as f:
 
 setup(
     name='supersonic',
-    version='1.0',
+    version='1.1.0',
     packages=find_packages(),
     description=('Lightning fast super customizable progress bar & indicator library for Python'),
     long_description=long_description,
@@ -14,7 +14,7 @@ setup(
     author='Bill Kudo',
     author_email='bluesky42624@gmail.com',
     license='GNU AGPLv3',
-    url='',
+    url='https://github.com/Bill13579/supersonic',
     keywords='progress bar indicator supersonic',
     classifiers=[
         "License :: OSI Approved :: GNU Affero General Public License v3",
