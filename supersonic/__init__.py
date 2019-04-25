@@ -23,10 +23,21 @@ class custom(object):
                 self.lengths.append(len(a))
             else:
                 raise TypeError("only extensions or strings are allowed")
-        self.total = total
+        self.__total = total
         self.current = 0
         self.show()
     
+    @property
+    def total(self):
+        return self.__total
+    
+    @total.setter
+    def total(self, new_total):
+        self.__total = new_total
+        for a in self.arrangement:
+            if isinstance(a, Extension):
+                a.conf(self.__total)
+
     def __get_update(self):
         s = ""
         for i in range(len(self.arrangement)):
