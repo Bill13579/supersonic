@@ -1,7 +1,7 @@
 import re
 import supersonic.exts as exts
 from supersonic.ext import Extension
-from supersonic.utils import write, inplace_write, backspace
+from supersonic.utils import write, inplace_write, backspace, UNICODE_SUPPORT
 from shutil import get_terminal_size
 
 try:
@@ -82,13 +82,14 @@ class custom(object):
         write("\n")
 
 class supersonic(custom):
-    def __init__(self, total=100, pdigits=1, ascii=True, bar_length=15):
+    def __init__(self, t="", total=100, pdigits=1, ascii=not UNICODE_SUPPORT, bar_length=15):
         if ascii:
             bar_progress_charset = exts.Bar.CHARSET_NUMERIC
         else:
             bar_progress_charset = exts.Bar.CHARSET_UNICODE_SMOOTH
         bar_placeholder = " "
-        super().__init__(exts.Percentage(digits=pdigits),
+        super().__init__(t + " " * min(len(t), 1),
+                         exts.Percentage(digits=pdigits),
                          " |",
                          exts.Bar(progress_charset=bar_progress_charset, placeholder=bar_placeholder, length=bar_length),
                          "| ",
