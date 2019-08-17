@@ -6,7 +6,7 @@ with open('README.md') as f:
 
 setup(
     name='supersonic',
-    version='1.1.0',
+    version='1.2.0',
     packages=find_packages(),
     description=('Lightning fast super customizable progress bar & indicator library for Python'),
     long_description=long_description,
