@@ -26,6 +26,12 @@ class custom(object):
         self.__total = total
         self.current = 0
         self.show()
+
+    def __enter__(self):
+        return self
+    
+    def __exit__(self, exc_type, exc_value, traceback):
+        self.done()
     
     @property
     def total(self):
