@@ -1,5 +1,7 @@
 import sys
 
+UNICODE_SUPPORT = sys.stdout.encoding.lower().startswith('utf')
+
 def write(text, flush=True):
     sys.stdout.write(text)
     if flush:

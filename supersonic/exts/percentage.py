@@ -2,7 +2,7 @@ from supersonic.ext import Extension
 from supersonic.utils import write, backspace
 
 class Percentage(Extension):
-    def __init__(self, digits=0):
+    def __init__(self, digits=1):
         super().__init__()
         self.digits = digits
     

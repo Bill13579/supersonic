@@ -1,17 +1,23 @@
 from supersonic.ext import Extension
-from supersonic.utils import write, backspace
+from supersonic.utils import write, backspace, UNICODE_SUPPORT
 
-CHARSET_DEFAULT = ("#")
+
+CHARSET_HASH = ("#")
 CHARSET_NUMERIC = ("1", "2", "3", "4", "5", "6", "7", "8", "9", "#")
 CHARSET_ARROW = (">", "=")
 CHARSET_UNICODE_BLOCK = ("█")
 CHARSET_UNICODE_SMOOTH = ("▏", "▎", "▍", "▌", "▋", "▊", "▉", "█")
+CHARSET_ROCKET = ("🚀", ">")
+CHARSET_DEFAULT = CHARSET_UNICODE_SMOOTH if UNICODE_SUPPORT else CHARSET_NUMERIC
 
 class Bar(Extension):
     CHARSET_DEFAULT = CHARSET_DEFAULT
+    CHARSET_HASH = CHARSET_HASH
     CHARSET_NUMERIC = CHARSET_NUMERIC
+    CHARSET_ARROW = CHARSET_ARROW
     CHARSET_UNICODE_BLOCK = CHARSET_UNICODE_BLOCK
     CHARSET_UNICODE_SMOOTH = CHARSET_UNICODE_SMOOTH
+    CHARSET_ROCKET = CHARSET_ROCKET
     def __init__(self, progress_charset=CHARSET_DEFAULT, placeholder=" ", length=20):
         super().__init__()
         self.progress_charset = progress_charset
