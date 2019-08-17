@@ -22,17 +22,20 @@ class Eta(Extension):
         super().__init__()
         self.records = []
         self.last = None
+        self.last_n = None
         self.alpha = alpha
     
     def stat_update(self, current):
         s = "eta "
         t = round(time.time() * 1e9)
+        if self.last_n is None:
+            self.last_n = 1
         if self.last is None:
             s += "--"
         else:
             if len(self.records) >= self.alpha:
                 del self.records[0]
-            self.records.append(t - self.last)
+            self.records.append((t - self.last) / abs(current - self.last_n))
             average_time = int(float(sum(self.records)) / float(len(self.records)))
             remaining_time = average_time * (self.total - current)
             days, hours, minutes, seconds = n2dhms(remaining_time)
@@ -44,4 +47,5 @@ class Eta(Extension):
                 s += str(minutes) + "m "
             s += str(seconds) + "s"
         self.last = t
+        self.last_n = current
         return s
