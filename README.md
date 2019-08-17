@@ -17,17 +17,17 @@ After you have installed Supersonic, you can test if it has been successfully in
 import supersonic as ss
 import time
 
-p = ss.sonic(total=1000 # Total
-		     , pdigits=1 # Number of digits of the percentage to show
-		     , ascii=False # True: Ascii, False: Unicode
-		     , bar_length=20 # Progress bar length
-		    )
-
-for i in range(1000):
-	p.progress() #or p.stat(i+1)
-	time.sleep(0.01)
-
-p.done() # Doing this will print a newline and end the progress bar
+## Arguments
+### t (the first argument) - Prefix text
+### total - Total
+### pdigits - Number of digits of the percentage to show
+### ascii - True: Ascii, False: Unicode
+### bar_length - Progress bar length
+# Supersonic 1.2 now supports context managers!
+with ss.sonic("Testing", total=1000, pdigits=1, ascii=False, bar_length=20) as p:
+	for i in range(1000):
+		p.progress() #or p.stat(i+1)
+		time.sleep(0.01)
 
 ```
 
