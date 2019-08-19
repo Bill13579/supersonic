@@ -11,7 +11,7 @@ setup(
     description=('Lightning fast super customizable progress bar & indicator library for Python'),
     long_description=long_description,
     long_description_content_type='text/markdown',
-    author='Bill Kudo',
+    author='Bill',
     author_email='bluesky42624@gmail.com',
     license='GNU AGPLv3',
     url='https://github.com/Bill13579/supersonic',

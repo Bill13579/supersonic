@@ -61,8 +61,8 @@ test(HelloWorldExtension())
 
 # Documentation
 
-<span style="font-size:17px;">supersonic.ext.</span>
-<span style="font-size:25px;">Extension()</span>
+<sub>supersonic.ext.</sub>
+<strong>Extension()</strong>
 
 The base class for all Supersonic Extensions. If you want to make your own extensions, see here: [Getting Started with Building Extensions](#getting-started-with-building-extensions)
 
@@ -87,10 +87,10 @@ Called by Supersonic to get an updated status string. Parameters cannot be chang
 The total number of things or tasks the user needs to process. Set by Supersonic. Can be accessed from `conf(total)` and `stat_update(current)`.
 
 <hr/>
-<span style="font-size:17px;">supersonic.exts.bar.</span>
-<span style="font-size:25px;">Bar(<span style="font-size:18px;">progress_charset=CHARSET_DEFAULT, placeholder=" ", length=20</span>)</span><br/>
-<span style="font-size:17px;">supersonic.exts.</span>
-<span style="font-size:25px;">Bar(<span style="font-size:18px;">progress_charset=CHARSET_DEFAULT, placeholder=" ", length=20</span>)</span>
+<sub>supersonic.exts.bar.</sub>
+<strong>Bar(progress_charset=CHARSET_DEFAULT, placeholder=" ", length=20)</strong><br/>
+<sub>supersonic.exts.</sub>
+<strong>Bar(progress_charset=CHARSET_DEFAULT, placeholder=" ", length=20)</strong>
 
 A built-in extension for progress bars. You can change what the progress bar displays by setting `progress_charset` and `placeholder`. See more about these parameters in the Parameters section.
 
@@ -121,10 +121,10 @@ Length of the progress bar.
 </div>
 
 <hr/>
-<span style="font-size:17px;">supersonic.exts.eta.</span>
-<span style="font-size:25px;">Eta(<span style="font-size:18px;">alpha=4</span>)</span><br/>
-<span style="font-size:17px;">supersonic.exts.</span>
-<span style="font-size:25px;">Eta(<span style="font-size:18px;">alpha=4</span>)</span>
+<sub>supersonic.exts.eta.</sub>
+<strong>Eta(alpha=4)</strong><br/>
+<sub>supersonic.exts.</sub>
+<strong>Eta(alpha=4)</strong>
 
 A built-in extension for calculating and displaying an estimate of the remaining time. Change `alpha` to change how far Supersonic will remember into the past.
 
@@ -135,34 +135,34 @@ How far Supersonic will remember into the past.
 </div>
 
 <hr/>
-<span style="font-size:17px;">supersonic.exts.identity.</span>
-<span style="font-size:25px;">Total()</span><br/>
-<span style="font-size:17px;">supersonic.exts.</span>
-<span style="font-size:25px;">Total()</span>
+<sub>supersonic.exts.identity.</sub>
+<strong>Total()</strong><br/>
+<sub>supersonic.exts.</sub>
+<strong>Total()</strong>
 
 A built-in extension for showing the total.
 
 <hr/>
-<span style="font-size:17px;">supersonic.exts.identity.</span>
-<span style="font-size:25px;">Current()</span><br/>
-<span style="font-size:17px;">supersonic.exts.</span>
-<span style="font-size:25px;">Current()</span>
+<sub>supersonic.exts.identity.</sub>
+<strong>Current()</strong><br/>
+<sub>supersonic.exts.</sub>
+<strong>Current()</strong>
 
 A built-in extension for showing the current status.
 
 <hr/>
-<span style="font-size:17px;">supersonic.exts.identity.</span>
-<span style="font-size:25px;">Fraction()</span><br/>
-<span style="font-size:17px;">supersonic.exts.</span>
-<span style="font-size:25px;">Fraction()</span>
+<sub>supersonic.exts.identity.</sub>
+<strong>Fraction()</strong><br/>
+<sub>supersonic.exts.</sub>
+<strong>Fraction()</strong>
 
 A built-in extension for showing the current status and the total as a fraction.
 
 <hr/>
-<span style="font-size:17px;">supersonic.exts.percentage.</span>
-<span style="font-size:25px;">Percentage(<span style="font-size:18px;">digits=0</span>)</span><br/>
-<span style="font-size:17px;">supersonic.exts.</span>
-<span style="font-size:25px;">Percentage(<span style="font-size:18px;">digits=0</span>)</span>
+<sub>supersonic.exts.percentage.</sub>
+<strong>Percentage(digits=0)</strong><br/>
+<sub>supersonic.exts.</sub>
+<strong>Percentage(digits=0)</strong>
 
 A built-in extension for calculating and displaying an estimate of the remaining time. Change `digits` to change how many digits of the percentage Supersonic will show.
 

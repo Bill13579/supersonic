@@ -37,10 +37,10 @@ A great thing about Supersonic is that you can extend it's capability with Exten
 
 # Documentation
 
-<span style="font-size:17px;">supersonic.</span>
-<span style="font-size:25px;">supersonic(<span style="font-size:18px;">total=100, pdigits=1, ascii=True, bar_length=15</span>)</span><br/>
-<span style="font-size:17px;">supersonic.</span>
-<span style="font-size:25px;">sonic(<span style="font-size:18px;">total=100, pdigits=1, ascii=True, bar_length=15</span>)</span>
+<sub>supersonic.</sub>
+<strong>supersonic(total=100, pdigits=1, ascii=True, bar_length=15)</strong><br/>
+<sub>supersonic.</sub>
+<strong>sonic(total=100, pdigits=1, ascii=True, bar_length=15)</strong>
 
 `supersonic.supersonic` is a wrapper around `supersonic.custom` that let's you create progress bars without creating your own layout. If you want full control over the final product, checkout `supersonic.custom`.
 
@@ -66,8 +66,8 @@ How long the progress bar should be.
 </div>
 
 <hr/>
-<span style="font-size:17px;">supersonic.</span>
-<span style="font-size:25px;">custom(<span style="font-size:18px;">*arrangement, total=100</span>)</span>
+<sub>supersonic.</sub>
+<strong>custom(*arrangement, total=100)</strong>
 
 ## Parameters
 ### *arrangement
@@ -87,9 +87,34 @@ supersonic.custom(Percentage(), " |", Bar(), "| done")
 Number of things or tasks you need to process.
 </div>
 
+## Properties
+### current
+Current progress.
+
+## Methods
+<strong>show()</strong>, <strong>update()</strong>
+
+Clear last status and show.
+
+<strong>clear()</strong>
+
+Clear last status.
+
+<strong>stat(stat)</strong>
+
+Set status to a specific value `stat`.
+
+<strong>progress(by=1)</strong>
+
+Increase the current status by a specific value `by`.
+
+<strong>done()</strong>
+
+Finished task!
+
 <hr/>
-<span style="font-size:17px;">supersonic.ext.</span>
-<span style="font-size:25px;">Extension()</span>
+<sub>supersonic.ext.</sub>
+<strong>Extension()</strong>
 
 The base class for all Supersonic Extensions. If you want to make your own extensions, see here: [supersonic/exts/README.md](supersonic/exts/README.md)
 
