@@ -1,5 +1,8 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*- 
+from __future__ import unicode_literals
 from supersonic.ext import Extension
-from supersonic.utils import write, backspace, UNICODE_SUPPORT
+from supersonic.utils import UNICODE_SUPPORT
 
 CHARSET_HASH = ("#")
 CHARSET_NUMERIC = ("1", "2", "3", "4", "5", "6", "7", "8", "9", "#")
@@ -18,7 +21,7 @@ class Bar(Extension):
     CHARSET_UNICODE_SMOOTH = CHARSET_UNICODE_SMOOTH
     CHARSET_ROCKET = CHARSET_ROCKET
     def __init__(self, progress_charset=CHARSET_DEFAULT, placeholder=" ", length=20):
-        super().__init__()
+        super(Bar, self).__init__()
         self.progress_charset = progress_charset
         self.placeholder = placeholder
         self.length = length

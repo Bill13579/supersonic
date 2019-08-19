@@ -31,7 +31,7 @@ Called by **Supersonic** to get an updated status string.
 
 There is also a special instance variable that is set by Supersonic called `total`. It is an int that stores the total. You can access it in both the `conf` method and the `stat_update` method.
 
-When overriding these methods, you always need to call `super().[method name goes here]([parameters goes here])` before doing anything inside your custom method.<br/>
+When overriding these methods, you always need to call `super([your class name], self).[method name goes here]([parameters goes here])` before doing anything inside your custom method.<br/>
 You cannot change the parameters of methods called by Supersonic, but the parameters of methods called by the user can be changed.
 
 Now let's write the code for our simple extension and finish it off! Remove `pass` and write the following:
@@ -41,14 +41,14 @@ class HelloWorldExtension(Extension):
     # This method will be called by the user
     def __init__(self, join_str="out of", unit="items"):
         # Don't forget this line
-        super().__init__()
+        super(HelloWorldExtension, self).__init__()
         self.join_str = join_str
         self.unit = unit
 
     # This method will be called by Supersonic to get the status string
     def stat_update(self, current):
         # Don't forget this line
-        super().stat_update(current)
+        super(HelloWorldExtension, self).stat_update(current)
         # This returned string will be displayed to the user
         return str(current) + " " + self.join_str + " " + str(self.total) + " " + self.unit
 ```

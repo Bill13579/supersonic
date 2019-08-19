@@ -19,7 +19,7 @@ def n2dhms(nanoseconds):
 
 class Eta(Extension):
     def __init__(self, alpha=4):
-        super().__init__()
+        super(Eta, self).__init__()
         self.records = []
         self.last = None
         self.last_n = None

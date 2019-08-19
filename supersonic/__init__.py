@@ -8,7 +8,8 @@ except NameError:
     basestring = str
 
 class custom(object):
-    def __init__(self, *arrangement, total=100):
+    def __init__(self, *arrangement, **kwargs):
+        total = kwargs.get("total", 100)
         if len(arrangement) == 0:
             raise ValueError("arrangement empty")
         self.arrangement = arrangement
@@ -79,7 +80,7 @@ class supersonic(custom):
         else:
             bar_progress_charset = exts.Bar.CHARSET_UNICODE_SMOOTH
         bar_placeholder = " "
-        super().__init__(t + " " * min(len(t), 1),
+        super(supersonic, self).__init__(t + " " * min(len(t), 1),
                          exts.Percentage(digits=pdigits),
                          " |",
                          exts.Bar(progress_charset=bar_progress_charset, placeholder=bar_placeholder, length=bar_length),
