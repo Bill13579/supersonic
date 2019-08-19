@@ -1,8 +1,6 @@
-import re
 import supersonic.exts as exts
 from supersonic.ext import Extension
 from supersonic.utils import write, inplace_write, backspace, UNICODE_SUPPORT
-from shutil import get_terminal_size
 
 try:
     basestring
@@ -19,10 +17,8 @@ class custom(object):
             if isinstance(a, Extension):
                 self.lengths.append(0)
                 a.conf(total)
-            elif isinstance(a, basestring):
-                self.lengths.append(len(a))
             else:
-                raise TypeError("only extensions or strings are allowed")
+                self.lengths.append(len(a))
         self.__total = total
         self.current = 0
         self.show()
@@ -46,8 +42,7 @@ class custom(object):
 
     def __get_update(self):
         s = ""
-        for i in range(len(self.arrangement)):
-            arrangement = self.arrangement[i]
+        for i, arrangement in enumerate(self.arrangement):
             if isinstance(arrangement, Extension):
                 update = arrangement.stat_update(self.current)
                 self.lengths[i] = len(update)
@@ -57,8 +52,7 @@ class custom(object):
         return s
     
     def show(self):
-        last_len = sum(self.lengths)
-        inplace_write(self.__get_update(), last_len)
+        inplace_write(self.__get_update(), sum(self.lengths))
     
     def clear(self):
         backspace(sum(self.lengths))
@@ -66,14 +60,11 @@ class custom(object):
     def update(self):
         self.show()
     
-    def stat(self, stat=None):
-        if stat is None:
-            return self.current
-        else:
-            if not isinstance(stat, int):
-                raise TypeError("stat must be an int")
-            self.current = stat
-            self.update()
+    def stat(self, stat):
+        if not isinstance(stat, int):
+            raise TypeError("stat must be an int")
+        self.current = stat
+        self.show()
     
     def progress(self, by=1):
         self.stat(self.current + by)
